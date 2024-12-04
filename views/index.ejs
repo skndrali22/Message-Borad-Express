@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <style>
+    /* Styling is unchanged from the previous version */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .head{
+      width: 100%;
+    }
+    h1 {
+      background-color: #6200ea;
+      color: white;
+      padding: 20px;
+      margin: 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    li {
+      background: white;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    strong {
+      color: #6200ea;
+    }
+
+    em {
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .open-link {
+      text-decoration: none;
+      color: white;
+      background-color: #6200ea;
+      padding: 5px 10px;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    }
+
+    .open-link:hover {
+      background-color: #3700b3;
+    }
+
+    a {
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background-color: #6200ea;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <h1><%= title %></h1>
+  </div>
+  <ul>
+    <% messages.forEach((message, index) => { %>
+      <li>
+        <div>
+          <strong><%= message.user %>:</strong> <%= message.text %>
+          <br>
+          <em>Added on: <%= message.added.toLocaleString() %></em>
+        </div>
+        <a href="/message/<%= index %>" class="open-link">Open</a>
+      </li>
+    <% }); %>
+  </ul>
+
+  <a href="/new">Add a New Message</a>
+</body>
+</html>

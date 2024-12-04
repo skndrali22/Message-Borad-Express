@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      background-color: #6200ea;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .message-details {
+      margin-top: 20px;
+      padding: 20px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 80%;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background-color: #6200ea;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <div class="message-details">
+    <p><strong>User:</strong> <%= message.user %></p>
+    <p><strong>Message:</strong> <%= message.text %></p>
+    <p><strong>Added on:</strong> <%= message.added.toLocaleString() %></p>
+  </div>
+  <a href="/">Back to messages</a>
+</body>
+</html>
